@@ -15,5 +15,5 @@ Every new pull request regardless of branch will now automatically trigger the w
 
 1. Merge your pull request into the `main` branch.
 
-1. (Optional) Try opening another pull request to see your workflow run again!
+1. Try opening another pull request to see your workflow run again!
 

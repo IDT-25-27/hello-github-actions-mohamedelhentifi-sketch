@@ -21,7 +21,7 @@ Because you set the workflow to run on the `pull_request` event, it will automat
 
 1. With the pull request created and our workflow triggered, Mona will prepare the next step in this exercise!
 
-### ⌨️ Activity: (optional) Inspect the workflow
+### ⌨️ Activity: Inspect the workflow
 
 1. At the top of the repository, select the **Actions** tab.
 
