@@ -93,19 +93,32 @@ jobs:
         with:
           template-file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
           template-vars: |
-            step_number: 3
-            passed: ${{ !contains(steps.*.outcome, 'failure') }}
-            results_table:
-              - description: "Workflow file syntax validation"
-                passed: ${{ steps.actionlint-check.outcome == 'success' }}
-              - description: "Added steps section to welcome job"
-                passed: ${{ steps.check-steps-section.outcome == 'success' }}
-              - description: "Added gh pr comment command"
-                passed: ${{ steps.check-gh-pr-comment.outcome == 'success' }}
-              - description: "Set GITHUB_TOKEN environment variable"
-                passed: ${{ steps.check-github-token.outcome == 'success' }}
-              - description: "Set PR_URL environment variable"
-                passed: ${{ steps.check-pr-url.outcome == 'success' }}
+            {
+              "step_number": "3",
+              "passed": ${{ !contains(steps.*.outcome, 'failure') }},
+              "results_table": [
+                {
+                  "description": "Workflow file syntax validation",
+                  "passed": ${{ steps.actionlint-check.outcome == 'success' }}
+                },
+                {
+                  "description": "Added steps section to welcome job",
+                  "passed": ${{ steps.check-steps-section.outcome == 'success' }}
+                },
+                {
+                  "description": "Added gh pr comment command",
+                  "passed": ${{ steps.check-gh-pr-comment.outcome == 'success' }}
+                },
+                {
+                  "description": "Set GITHUB_TOKEN environment variable",
+                  "passed": ${{ steps.check-github-token.outcome == 'success' }}
+                },
+                {
+                  "description": "Set PR_URL environment variable",
+                  "passed": ${{ steps.check-pr-url.outcome == 'success' }}
+                }
+              ]
+            }
 
       - name: Create comment - step results
         run: |
